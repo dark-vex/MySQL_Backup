@@ -9,6 +9,9 @@ send_mail(){
 /usr/bin/sendemail -t backup@domain.tld -f sender@domain.tld -u sender_username -m Report -s 192.168.1.2 -a /var/log/backup-db.log -xu "sender@domain.tld" -xp "sender_pwd"
 }
 
+#MySQL Backup destination dir
+TO=/mnt/backup/
+
 #MySQL Backup
 USER="<INSERT-USER>"
 PASSWORD="<INSERT-USER-PWD>"
