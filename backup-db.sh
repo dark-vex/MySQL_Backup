@@ -13,7 +13,8 @@ send_mail(){
 USER="<INSERT-USER>"
 PASSWORD="<INSERT-USER-PWD>"
 
-databases=`mysql --user=$USER --password=$PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
+#databases=`mysql --user=$USER --password=$PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database`
+databases=`mysql --user=$USER --password=$PASSWORD -e "SHOW DATABASES;" | tr -d "| " | grep -v Database | grep -v performance_schema`
 
 for db in $databases; do
     if [[ "$db" != "information_schema" ]] && [[ "$db" != _* ]] ; then
